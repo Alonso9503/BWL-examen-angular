@@ -1,0 +1,25 @@
+<div class="navbar navbar-inverse">
+    <div class="btns">
+        <div class="btn-group">
+            <button class="btn" (click)="salir()">Salir</button>
+            <button class="btn"><a onclick="location.href='/dashboard'"> Dashboard</a></button>
+            <button class="btn"><a onclick="location.href='/mapa'"> Mapa</a></button>
+        </div>
+    </div>
+</div>
+<hr />
+
+
+<div class="form-group">
+    <label>Ingresa la dirección</label>
+    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="longitud y latitud" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+  </div>
+ 
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" style="height: 400px; width: 1100px;">
+    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"></agm-marker>
+  </agm-map>
+ 
+  <h5>Dirección: {{address}}</h5>
+  <div>Latitude: {{latitude}}</div>
+  <div>Longitude: {{longitude}}</div>

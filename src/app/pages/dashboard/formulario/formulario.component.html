@@ -1,0 +1,22 @@
+<div class="form-group">
+    <a class="btn btn-default btn-circle btn-xl" (click)="addNote()">✚</a>
+</div>
+
+<div formArrayName="notas" *ngFor="let nota of notas.controls; let i = index">
+    <div [formGroupName]="i">
+       <div class="form-group row">
+         <label class="col-md-1" [attr.for]="'nota' + i">Nota</label>
+          <div class="col-ms-3">
+            <input type="text" [attr.id]="'nota'+ i" class="form-control" formControlName="note">
+          </div>
+       </div>
+       <label class="col-md-1" [attr.for]="'date' + i">Fecha</label>
+          <div class="col-ms-3">
+            <input type="text" [attr.id]="'date'+ i" class="form-control" formControlName="date">
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-danger" (click)="deleteNote(i)">Remover</button>
+          </div>
+    </div>
+</div>
+

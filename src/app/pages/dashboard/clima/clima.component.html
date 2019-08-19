@@ -1,0 +1,36 @@
+<div class="container">
+        <div class="row">
+                <div class="col-xl">
+                        <div *ngIf="weather" class="card card-body weather justify-content-center">
+                                <p class="temp">{{weather.main.temp}}° ⛅</p>
+                                <p class="city"><b>{{weather.name}}</b></p>
+                        </div>
+                </div>
+        </div>
+</div>
+
+<div class="container">
+        <div class="row justify-content-center">
+                <div class="col-sm-2 col1">
+                        <p class="temp1">30° ☀</p>
+                        <p class="day"><b>Lunes</b></p>
+                </div>
+                <div class="col-sm-2 col2">
+                        <p class="temp1">22° ☁</p>
+                        <p class="day"><b>Martes</b></p>
+                </div>
+                <div class="col-sm-2 col1">
+                        <p class="temp1">27° ☀</p>
+                        <p class="day"><b>Miercoles</b></p>
+                </div>
+                <div class="col-sm-2 col4">
+                        <p class="temp1">18° ⛈</p>
+                        <p class="day"><b>Jueves</b></p>
+                </div>
+                <div class="col-sm-2 col1">
+                        <p class="temp1">29° ☀</p>
+                        <p class="day"><b>Vernes</b></p>
+                </div>
+        </div>
+
+</div>

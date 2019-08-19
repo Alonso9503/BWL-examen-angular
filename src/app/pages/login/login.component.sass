@@ -1,0 +1,75 @@
+$primary: #303F9F
+$light-primary: #BBDEFB
+$white: #f2f2f2
+$divider: #B6B6B6
+$error: #D32F2F
+
+$border: 2px
+$font-family: "Roboto", Arial
+
+
+.row 
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 100vh
+
+.h2, h2 
+    font-size: 2rem
+    color: #0D57EA
+    text-align: center
+    padding: 9px 13px
+    font-family: roboto
+
+
+.form 
+  width: 550px
+
+.bg-light 
+    background-color: #f8f9fa!important
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.3)
+
+.btn-circle.btn-xl 
+    width: 70px
+    height: 70px
+    padding: 10px 16px
+    border-radius: 35px
+    font-size: 30px
+    color: #0D57EA
+    line-height: 1.33
+    border: 1px solid rgba(0,0,0,.125)
+    position: relative
+    top: 54px
+    background: #f8f9fa
+    box-shadow: 0 11px 40px 0 rgba(0,0,0,0.3)
+
+
+.btn-circle 
+    width: 30px
+    height: 30px
+    padding: 6px 0px
+    border-radius: 15px
+    text-align: center
+    font-size: 12px
+    line-height: 1.42857
+
+.input-group
+     position: relative
+     margin-bottom: 32px
+     input[type="email"],
+     input[type="password"]
+        font-family: $font-family
+        font-size: 16px
+        color: $primary
+        width: 100%
+        box-shadow: none
+        outline: none
+        padding: 15px
+        background: none
+        border: none
+        border-bottom: $border solid $light-primary
+        &:focus,
+        &:active
+            outline: none
+            border-bottom: $border solid $primary
+

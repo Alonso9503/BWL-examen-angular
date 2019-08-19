@@ -1,0 +1,55 @@
+<div class="limiter animated fadeInRight">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-offset-4 col-md-5">
+                <div class="card card-body bg-light input-group">
+                    <form (ngSubmit)="onSubmit( f )" #f="ngForm">
+                        <h2>Crear Nueva cuenta</h2>
+                        <input type="email" 
+                               class="form-control" 
+                               name="email" 
+                               [(ngModel)]="usuario.email" 
+                               required email
+                               placeholder="correo" />
+
+                        <span *ngIf="f.submitted && f.controls['email'].errors" 
+                              class="text-danger"
+                              style="font-size: 12px">El correo es obligatorio</span>
+                        <br />
+
+                        <input type="text" 
+                               class="form-control" 
+                               name="nombre" 
+                               [(ngModel)]="usuario.usuario"
+                               minlength="2" 
+                               required placeholder="Nombre y apellido" />
+                        <span *ngIf="f.submitted && f.controls['nombre'].errors" 
+                               class="text-danger"
+                               style="font-size: 12px">El nombre es obligatorio</span>
+                        <br />
+                        <input type="password" 
+                               class="form-control" 
+                               name="password" 
+                               [(ngModel)]="usuario.password"
+                               required minlength="6" 
+                               placeholder="contraseña" />
+
+                        <span *ngIf="f.submitted && f.controls['password'].errors" 
+                               class="text-danger"
+                               style="font-size: 12px">Al menos 6 dígitos</span>
+                        <br />
+                        <div class="justify-content-center">
+                            <a routerLink="/regitro" class="txt1">
+                                ¿Ya tienes cuenta? / Ingresar
+                            </a>
+                        </div>
+                        <div class="col text-center col-sm-12">
+                            <button type="submit" class="btn btn-default btn-circle btn-xl">➜
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

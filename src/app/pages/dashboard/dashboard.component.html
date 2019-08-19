@@ -1,0 +1,159 @@
+<div class="navbar navbar-inverse">
+  <div class="btns">
+    <div class="btn-group">
+      <button class="btn" (click)="salir()">Salir</button>
+      <button class="btn"><a onclick="location.href='/dashboard'"> Dashboard</a></button>
+      <button class="btn"><a onclick="location.href='/mapa'"> Mapa</a></button>
+    </div>
+  </div>
+</div>
+<hr />
+
+<div class="row">
+  <div class="col-xl cont">
+    Lista de actividades
+    <!--<div class="col text-right col-sm-12">
+      <button type="button" class="btn btn-default btn-circle btn-xl">✚</button>
+    </div>-->
+    
+    <div class="col text-right col-sm-12 barra">
+      <a class="btn btn-default btn-circle btn-xl btn1" (click)="addNote()">✚</a>
+    </div>
+    <div class="container conten">
+      <div formArrayName="notas" *ngFor="let nota of notas.controls; let i = index">
+        <div [formGroupName]="i">
+          <div class="row">
+            <div class="row">
+              <div class="col etap1">
+                <input type="time" [attr.id]="'time'+ i" class="etap1 form-control input-sm" formControlName="time">
+                <input type="date" [attr.id]="'date'+ i" class="etap1 form-control input-sm" formControlName="date">
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col etap2">
+                <input type="text" [attr.id]="'nota'+ i" class="etap2 form-control input-sm" placeholder="Nota" formControlName="note">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-default btn-circle btn-xl btnEli" (click)="deleteNote(i)">X</button>
+              <button class="btn btn-default btn-circle btn-xl btnApro" (click)="addNote()">✓</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xl cont">Tarjetas de crédito
+    <div class="col text-right col-sm-12 barra">
+      <a class="btn btn-default btn-circle btn-xl btn2" (click)="addtarjeta()">✚</a>
+    </div>
+    <div class="contai">
+      <div formArrayName="tarjetas" *ngFor="let tarjeta of tarjetas.controls; let i = index" style="display: inline-block;">
+        <div [formGroupName]="i">
+          <div id="area">
+            <div class="master-card">
+              <div class="card">
+                <div class="title">CREDIT CARD</div>
+                <div class="input-number"><span class="title-number">CARD NUMBER</span>
+                  <div class="inputs-number">
+                    <input type="text" [attr.id]="'number'+ i" maxlength="4" name="number-card" placeholder="0000"
+                      required="required" formControlName="number" />
+                    <input type="text" [attr.id]="'number'+ i" maxlength="4" name="number-card" placeholder="0000"
+                      required="required" formControlName="number" />
+                    <input type="text" [attr.id]="'number'+ i" maxlength="4" name="number-card" placeholder="0000"
+                      required="required" formControlName="number" />
+                    <input type="text" [attr.id]="'number'+ i" maxlength="4" name="number-card" placeholder="0000"
+                      required="required" formControlName="number" />
+                  </div>
+                  <div class="selects-date selecters">
+                    <div class="day-select"><span>DAY</span>
+                      <select id="dates" [attr.id]="'dates'+ i" formControlName="dates">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20</option>
+                        <option value="">21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30</option>
+                      </select>
+                    </div>
+                    <div class="year-select"><span>YEAR</span>
+                      <select id="dates" [attr.id]="'dates'+ i" formControlName="dates">
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20</option>
+                        <option value="">21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="mark-gold">
+                  <div class="round">
+                    <div class="circles">
+                      <div class="circle-1"></div>
+                      <div class="circle-2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="name"><span>YOUR NEME</span></div>
+              </div>
+              <div class="card-back">
+                <div class="tire"></div>
+                <div class="secret-area">
+                  <input type="text" maxlength="3" name="number-card" placeholder="000" required="required" />
+                </div>
+                <div class="chip-card"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 bot">
+            <button class="btn btn-default btn-circle btn-xl btnElim" (click)="deleteTarjeta(i)">X</button>
+            <button class="btn btn-default btn-circle btn-xl btnAprob" (click)="addtarjeta()">✓</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<div class="row">
+  <div class="col-xl cont">Ventas
+    <div class="graf">
+      <app-grafica></app-grafica>
+    </div>
+  </div>
+  <div class="col-xl cont">Clima
+    <app-clima></app-clima>
+  </div>
+</div>
